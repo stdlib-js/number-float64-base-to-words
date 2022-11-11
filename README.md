@@ -50,7 +50,7 @@ The [branches.md][branches-url] file summarizes the available branches and displ
 var toWords = require( '@stdlib/number-float64-base-to-words' );
 ```
 
-#### toWords( \[out,] x )
+#### toWords( x )
 
 Splits a [double-precision floating-point number][ieee754] into a higher order word (unsigned 32-bit `integer`) and a lower order word (unsigned 32-bit `integer`).
 
@@ -72,14 +72,16 @@ var low = w[ 1 ];
 // returns 2479577218
 ```
 
-To avoid unnecessary memory allocation, the function supports providing an output (destination) object.
+#### toWords.assign( x, out, stride, offset )
+
+Splits a [double-precision floating-point number][ieee754] into a higher order word (unsigned 32-bit `integer`) and a lower order word (unsigned 32-bit `integer`) and assigns results to a provided output array.
 
 ```javascript
 var Uint32Array = require( '@stdlib/array-uint32' );
 
 var out = new Uint32Array( 2 );
 
-var w = toWords( out, 3.14e201 );
+var w = toWords.assign( 3.14e201, out, 1, 0 );
 // returns <Uint32Array>[ 1774486211, 2479577218 ]
 
 var bool = ( w === out );
