@@ -35,38 +35,30 @@ limitations under the License.
 
 > Split a [double-precision floating-point number][ieee754] into a higher order word and a lower order word.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/number-float64-base-to-words
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-toWords = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-words@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var toWords = require( 'path/to/vendor/umd/number-float64-base-to-words/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-words@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.toWords;
-})();
-</script>
+var toWords = require( '@stdlib/number-float64-base-to-words' );
 ```
 
 #### toWords( x )
@@ -117,16 +109,11 @@ var bool = ( w === out );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-floor@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-pow@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-words@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var floor = require( '@stdlib/math-base-special-floor' );
+var randu = require( '@stdlib/random-base-randu' );
+var pow = require( '@stdlib/math-base-special-pow' );
+var toWords = require( '@stdlib/number-float64-base-to-words' );
 
 var frac;
 var exp;
@@ -142,11 +129,6 @@ for ( i = 0; i < 100; i++ ) {
     w = toWords( x );
     console.log( 'x: %d. higher: %d. lower: %d.', x, w[ 0 ], w[ 1 ] );
 }
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -155,11 +137,133 @@ for ( i = 0; i < 100; i++ ) {
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/number/float64/base/to_words.h"
+```
+
+#### stdlib_base_float64_to_words( x, \*high, \*low )
+
+Splits a double-precision floating-point number into a higher order word and a lower order word.
+
+```c
+#include <stdint.h>
+
+uint32_t high;
+uint32_t low;
+
+stdlib_base_float64_to_words( 3.14, &high, &low );
+```
+
+The function accepts the following arguments:
+
+-   **x**: `[in] double` input value.
+-   **high**: `[out] uint32_t*` destination for higher order word.
+-   **low**: `[out] uint32_t*` destination for lower order word.
+
+```c
+void stdlib_base_float64_to_words( const double x, uint32_t *high, uint32_t *low );
+```
+
+#### stdlib_base_float64_words_t
+
+An opaque type definition for a union for converting between a double-precision floating-point number and two unsigned 32-bit integers.
+
+```c
+#include <stdint.h>
+
+stdlib_base_float64_words_t w;
+
+// Assign a double-precision floating-point number:
+w.value = 3.14;
+
+// Extract the high and low words:
+uint32_t high = w.words.high;
+uint32_t low = w.words.low;
+```
+
+The union has the following members:
+
+-   **value**: `double` double-precision floating-point number.
+
+-   **words**: `struct` struct having the following members:
+
+    -   **high**: `uint32_t` higher order word.
+    -   **low**: `uint32_t` lower order word.
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/number/float64/base/to_words.h"
+#include <stdint.h>
+#include <stdio.h>
+
+int main( void ) {
+    double x[] = { 3.14, -3.14, 0.0, 0.0/0.0 };
+
+    uint32_t high;
+    uint32_t low;
+    int i;
+    for ( i = 0; i < 4; i++ ) {
+        stdlib_base_float64_to_words( x[ i ], &high, &low );
+        printf( "%lf => high: %u, low: %u\n", x[ i ], high, low );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
 <section class="related">
+
+* * *
+
+## See Also
+
+-   <span class="package-name">[`@stdlib/number-float64/base/from-words`][@stdlib/number/float64/base/from-words]</span><span class="delimiter">: </span><span class="description">create a double-precision floating-point number from a higher order word and a lower order word.</span>
+-   <span class="package-name">[`@stdlib/number-float32/base/to-word`][@stdlib/number/float32/base/to-word]</span><span class="delimiter">: </span><span class="description">return an unsigned 32-bit integer corresponding to the IEEE 754 binary representation of a single-precision floating-point number.</span>
 
 </section>
 
@@ -235,6 +339,14 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/number-float64-base-to-words/main/LICENSE
 
 [ieee754]: https://en.wikipedia.org/wiki/IEEE_754-1985
+
+<!-- <related-links> -->
+
+[@stdlib/number/float64/base/from-words]: https://github.com/stdlib-js/number-float64-base-from-words
+
+[@stdlib/number/float32/base/to-word]: https://github.com/stdlib-js/number-float32-base-to-word
+
+<!-- </related-links> -->
 
 </section>
 
