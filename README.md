@@ -258,6 +258,13 @@ int main( void ) {
 
 <section class="related">
 
+* * *
+
+## See Also
+
+-   <span class="package-name">[`@stdlib/number-float64/base/from-words`][@stdlib/number/float64/base/from-words]</span><span class="delimiter">: </span><span class="description">create a double-precision floating-point number from a higher order word and a lower order word.</span>
+-   <span class="package-name">[`@stdlib/number-float32/base/to-word`][@stdlib/number/float32/base/to-word]</span><span class="delimiter">: </span><span class="description">return an unsigned 32-bit integer corresponding to the IEEE 754 binary representation of a single-precision floating-point number.</span>
+
 </section>
 
 <!-- /.related -->
@@ -332,6 +339,14 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/number-float64-base-to-words/main/LICENSE
 
 [ieee754]: https://en.wikipedia.org/wiki/IEEE_754-1985
+
+<!-- <related-links> -->
+
+[@stdlib/number/float64/base/from-words]: https://github.com/stdlib-js/number-float64-base-from-words
+
+[@stdlib/number/float32/base/to-word]: https://github.com/stdlib-js/number-float32-base-to-word
+
+<!-- </related-links> -->
 
 </section>
 
