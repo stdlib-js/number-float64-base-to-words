@@ -42,13 +42,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import toWords from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-words@deno/mod.js';
+import toWords from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-words@v0.2.0-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-words@deno/mod.js';
+import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-words@v0.2.0-deno/mod.js';
 ```
 
 #### toWords( x )
@@ -103,7 +103,7 @@ var bool = ( w === out );
 import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-floor@deno/mod.js';
 import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@deno/mod.js';
 import pow from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-pow@deno/mod.js';
-import toWords from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-words@deno/mod.js';
+import toWords from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-words@v0.2.0-deno/mod.js';
 
 var frac;
 var exp;
