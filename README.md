@@ -42,13 +42,18 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import toWords from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-words@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/number-float64-base-to-words/tags). For example,
+
+```javascript
 import toWords from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-words@v0.2.0-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-words@v0.2.0-esm/index.mjs';
+import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-words@esm/index.mjs';
 ```
 
 #### toWords( x )
@@ -108,7 +113,7 @@ var bool = ( w === out );
 import floor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-floor@esm/index.mjs';
 import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@esm/index.mjs';
 import pow from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-pow@esm/index.mjs';
-import toWords from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-words@v0.2.0-esm/index.mjs';
+import toWords from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-words@esm/index.mjs';
 
 var frac;
 var exp;
