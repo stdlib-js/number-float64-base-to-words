@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/number-float64-base-to-words",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Split a double-precision floating-point number into a higher order word and a lower order word.",
   "license": "Apache-2.0",
   "author": {
@@ -41,19 +41,19 @@
   },
   "dependencies": {
     "@stdlib/array-float64": "^0.2.1",
-    "@stdlib/array-uint32": "^0.2.1",
+    "@stdlib/array-uint32": "^0.2.2",
     "@stdlib/assert-is-little-endian": "^0.2.1",
     "@stdlib/os-byte-order": "^0.2.1",
-    "@stdlib/os-float-word-order": "^0.2.1",
+    "@stdlib/os-float-word-order": "^0.2.2",
     "@stdlib/types": "^0.3.2",
-    "@stdlib/utils-define-nonenumerable-read-only-property": "^0.2.1",
-    "@stdlib/utils-library-manifest": "^0.2.1"
+    "@stdlib/utils-define-nonenumerable-read-only-property": "^0.2.2",
+    "@stdlib/utils-library-manifest": "^0.2.2"
   },
   "devDependencies": {
-    "@stdlib/assert-has-own-property": "^0.2.1",
-    "@stdlib/assert-is-array": "^0.2.1",
-    "@stdlib/constants-float64-ninf": "^0.2.1",
-    "@stdlib/constants-float64-pinf": "^0.2.1",
+    "@stdlib/assert-has-own-property": "^0.2.2",
+    "@stdlib/assert-is-array": "^0.2.2",
+    "@stdlib/constants-float64-ninf": "^0.2.2",
+    "@stdlib/constants-float64-pinf": "^0.2.2",
     "@stdlib/math-base-assert-is-integer": "^0.2.4",
     "@stdlib/math-base-special-floor": "^0.2.2",
     "@stdlib/math-base-special-pow": "^0.2.1",
@@ -61,7 +61,7 @@
     "@stdlib/random-base-randu": "^0.2.1",
     "@stdlib/string-left-pad": "^0.2.1",
     "@stdlib/string-repeat": "^0.2.1",
-    "@stdlib/utils-try-require": "^0.2.1",
+    "@stdlib/utils-try-require": "^0.2.2",
     "proxyquire": "^2.0.0",
     "tape": "git+https://github.com/kgryte/tape.git#fix/globby",
     "istanbul": "^0.4.1",
