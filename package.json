@@ -45,7 +45,7 @@
     "@stdlib/assert-is-little-endian": "^0.2.2",
     "@stdlib/os-byte-order": "^0.2.2",
     "@stdlib/os-float-word-order": "^0.2.2",
-    "@stdlib/types": "^0.4.1",
+    "@stdlib/types": "^0.4.3",
     "@stdlib/utils-define-nonenumerable-read-only-property": "^0.2.2",
     "@stdlib/utils-library-manifest": "^0.2.2"
   },
