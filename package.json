@@ -108,7 +108,8 @@
     "significand",
     "mantissa",
     "exponent",
-    "fraction"
+    "fraction",
+    "number"
   ],
   "funding": {
     "type": "opencollective",
